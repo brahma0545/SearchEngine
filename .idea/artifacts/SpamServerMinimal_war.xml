@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpamServerMinimal:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="SpamServerMinimal.war">
+      <element id="artifact" artifact-name="SpamServerMinimal:war exploded" />
+    </root>
+  </artifact>
+</component>
