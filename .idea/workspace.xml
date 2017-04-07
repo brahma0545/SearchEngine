@@ -2,40 +2,89 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70b5e6a3-68de-4bdb-9d06-5da61147668e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/input/sample.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_8_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/ApplicationConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/controllers/SearchController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/search/Search.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/search/SearchMain.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/services/WikiParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/services/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SpamServerMinimal_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SpamServerMinimal_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SpamServerMinimal_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SpamServerMinimal_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/0_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/0_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/0_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/10_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/10_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/10_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/11_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/11_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/11_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/12_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/12_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/12_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/13_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/13_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/13_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/14_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/14_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/14_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/15_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/15_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/15_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/16_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/16_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/16_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/17_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/17_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/17_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/18_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/18_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/18_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/19_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/19_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/19_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/1_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/1_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/1_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/20_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/20_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/20_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/21_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/21_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/21_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/22_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/22_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/22_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/23_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/23_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/23_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/24_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/24_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/24_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/25_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/25_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/25_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/26_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/26_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/26_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/2_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/2_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/2_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/3_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/3_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/3_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/4_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/4_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/4_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/5_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/5_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/5_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/6_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/6_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/6_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/7_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/7_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/7_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/8_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/8_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/8_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/9_index.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/9_offsets.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/9_secondry.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/output/allWords.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpamServerMinimal.iml" afterPath="$PROJECT_DIR$/SpamServerMinimal.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/config/StopWordsConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/config/StopWordsConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/model/MergeLine.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/model/MergeLine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/search/DocDetails.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/search/DocDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/search/PostingList.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/search/PostingList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/search/QueryWord.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/search/QueryWord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/services/ExternalSort.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/services/ExternalSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/services/PageParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/services/PageParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/services/WikiSAXHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/raudra/searchengine/services/WikiSAXHandler.java" />
     </list>
     <ignored path="SpamServerMinimal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1272,12 +1321,20 @@
       <workItem from="1491284367817" duration="4644000" />
       <workItem from="1491388870453" duration="1480000" />
       <workItem from="1491552956077" duration="1971000" />
-      <workItem from="1491554964803" duration="7752000" />
+      <workItem from="1491554964803" duration="7855000" />
     </task>
+    <task id="LOCAL-00001" summary="working code">
+      <created>1491563482128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1491563482128</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80646000" />
+    <option name="totallyTimeSpent" value="80749000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1290,7 +1347,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="18" width="1317" height="750" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1310,8 +1367,9 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37738618" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37738618" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32892805" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24905087" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1351,6 +1409,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="working code" />
+    <option name="LAST_COMMIT_MESSAGE" value="working code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
