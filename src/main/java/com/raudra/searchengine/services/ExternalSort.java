@@ -74,7 +74,7 @@ public class ExternalSort {
             long lineLength=0;
             int lineNumber=0;
             //String words[];
-            String wordDelimiter= WikiPageParsingConstants.WORD_IDF_DELIMITER+"";
+            String wordDelimiter= WikiPageParsingConstants.WORD_IDF_DELIMITER + "";
             String offsetLine;
             
             //TODO: optimize by using byte array instead of converting to String
@@ -84,7 +84,7 @@ public class ExternalSort {
             	 if(lineNumber++ % WikiPageParsingConstants.SECONDRY_INDEX_GAP == 0 ){
             		 secondryIndexWriter.println(word + wordDelimiter + secLineStart); 
             	 }
-            	 offsetLine=word + wordDelimiter + lineStart;
+            	 offsetLine = word + wordDelimiter + lineStart;
             	 wordsWriter.println(offsetLine); 
             	 lineStart+=lineLength+1; // include newline character
             	 secLineStart+=offsetLine.length()+1;

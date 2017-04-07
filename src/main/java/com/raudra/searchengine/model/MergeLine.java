@@ -39,7 +39,7 @@ public class MergeLine implements Comparable<MergeLine> {
 		this.docIds = docIds;
 	}
 
-	@Override
+
 	public int compareTo(MergeLine inputLine) {
 		int diff=0;
 		if(inputLine == null)

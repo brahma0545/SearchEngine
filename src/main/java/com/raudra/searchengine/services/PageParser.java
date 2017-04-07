@@ -60,19 +60,22 @@ public class PageParser {
         page.setId(String.valueOf(totalNumberOfDoc));
         Map<String,Integer[]> wordCount=new HashMap<String, Integer[]>(256);
 
-        String aux=page.getTitle().toString();
+        String aux = page.getTitle().toString();
 
+        //TODO move this seperate TITLE file
         WikiPageParsingConstants.titleIndexWriter.write(page.getId());
         WikiPageParsingConstants.titleIndexWriter.write(WikiPageParsingConstants.wordDelimiter);
         WikiPageParsingConstants.titleIndexWriter.write(aux);
         WikiPageParsingConstants.titleIndexWriter.write('\n');
+        //TODO Writing file is done
+
 
         parseText(aux.toLowerCase(), wordCount,Fields.TITLE);
 
-        aux=page.getText().toString().toLowerCase();
+        aux = page.getText().toString().toLowerCase();
         parseText(aux,wordCount, Fields.BODY);
 
-        aux=page.getInfoBox().toString().toLowerCase();
+        aux = page.getInfoBox().toString().toLowerCase();
         parseText(aux,wordCount, Fields.INFOBOX);
 
         aux=page.getExternalLinks().toString().toLowerCase();
@@ -80,6 +83,7 @@ public class PageParser {
 
         aux=page.getCategory().toString().toLowerCase();
         parseText(aux,wordCount, Fields.CATAGORY);
+
         insertToAllWords(page, wordCount);
 		/*maxWeight=maxFreq(wordCount);
 
@@ -98,14 +102,16 @@ public class PageParser {
         return max;
     }
 
-    public void insertToAllWords(WikiPage page, Map<String,Integer[]> wordCount) throws IOException{
+    public void insertToAllWords(WikiPage page, Map<String,Integer[]> wordCount)
 
-        Iterator<Map.Entry<String,Integer[]> > entries=wordCount.entrySet().iterator();
+            throws IOException{
+
+        Iterator<Map.Entry<String,Integer[]> > entries = wordCount.entrySet().iterator();
 
         StringBuilder docList=null;
         while(entries.hasNext()){
-            Map.Entry<String, Integer[]> entry=entries.next();
-            docList=allWords.get(entry.getKey());
+            Map.Entry<String, Integer[]> entry = entries.next();
+            docList = allWords.get(entry.getKey());
             if(docList == null){
                 docList=new StringBuilder();
                 docList.append(page.getId())
@@ -128,10 +134,10 @@ public class PageParser {
                     convert(System.currentTimeMillis()- WikiPageParsingConstants.lastDump, TimeUnit.MILLISECONDS)
                     +" total time(m) " + TimeUnit.MINUTES.
                     convert(System.currentTimeMillis()- WikiPageParsingConstants.startTime, TimeUnit.MILLISECONDS));
-            WikiPageParsingConstants.lastDump=System.currentTimeMillis();
+            WikiPageParsingConstants.lastDump = System.currentTimeMillis();
             dumpAllWords();
-            WikiPageParsingConstants.NumOfPagesInMap=0;
-            allWords = new TreeMap<String,StringBuilder>();
+            WikiPageParsingConstants.NumOfPagesInMap = 0;
+            allWords = new TreeMap<>();
             System.gc();
         }
     }
@@ -142,32 +148,25 @@ public class PageParser {
         if(allWords.size() == 0)
             return;
 
-        Writer writer=getWriterForDump();
+        Writer writer = getWriterForDump();
         Iterator<Map.Entry<String, StringBuilder>> entries = allWords.entrySet().iterator();
         StringBuffer blockOfData;
         Map.Entry<String,StringBuilder> entry=null;
 
         while( entries.hasNext()){
-            blockOfData=new StringBuffer(2048);
+            blockOfData = new StringBuffer(2048);
             entry = entries.next();
             blockOfData.append(entry.getKey())
                     .append(WikiPageParsingConstants.WORD_DELIMITER)
                     .append(entry.getValue())
                     .append("\n");
-            //if( i % 100 == 0) {
-            //writeData(blockOfData.toString(), writer);
             writer.write(blockOfData.toString());
             //}
         }
-
-		/*if(blockOfData.length() > 0)
-			writeData(blockOfData.toString(), writer);*/
-
         try {
             if(writer != null)
                 writer.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -192,7 +191,8 @@ public class PageParser {
 
     public Writer getWriterForDump() {
 
-        File dumpFile=new File(WikiPageParsingConstants.indexFileDir,""+ WikiPageParsingConstants.lastSubIndexFile++ );
+        File dumpFile=new File(WikiPageParsingConstants.indexFileDir,"" +
+                WikiPageParsingConstants.lastSubIndexFile++ );
         WikiPageParsingConstants.subIndexFiles.add(dumpFile.getAbsolutePath());
         try {
             return new BufferedWriter(new FileWriter(dumpFile,false));
@@ -205,7 +205,7 @@ public class PageParser {
 
 
 
-    public void parseText(String text,Map<String, Integer[]> wordCount, Fields type){
+    public void parseText(String text, Map<String, Integer[]> wordCount, Fields type){
         //String []tokens = text.split("[0-9&|\\]\\[{}\\s=><\\-!();\'\"\\*#$\\,\\\\/]");
         String []tokens = text.split(WikiPageParsingConstants.DOC_PARSIGN_REGEX);
         Integer[] count;
@@ -222,9 +222,7 @@ public class PageParser {
 
             //Stemming
             token = stemmer.stemWord(token);
-
-            count=wordCount.get(token);
-
+            count = wordCount.get(token);
             if(count == null){
                 count = new Integer[]{0,0,0,0,0};
                 count[type.ordinal()]++;
@@ -272,39 +270,31 @@ public class PageParser {
         ExternalSort.createOffsetsFile(indexFile.getAbsolutePath(), WikiPageParsingConstants.OFFSETS_FILE,100000);
     }
 
-    public void mergeSubIndexFiles() throws IOException{
+    public void mergeSubIndexFiles() throws IOException {
 
-        //File indexFile =new File(WikiPageParsingConstants.indexFileDir, WikiPageParsingConstants.INDEX_FILE_NAME) ;
-        //WikiPageParsingConstants.absoluteIndexFilePath=indexFile.getAbsolutePath();
-        //System.out.println(WikiPageParsingConstants.indexFileDir);
-        //System.out.println(WikiPageParsingConstants.absoluteIndexFilePath);
-       /*
-		if(WikiPageParsingConstants.subIndexFiles==null || WikiPageParsingConstants.subIndexFiles.size() == 0)
-			return;
-
-		else if(WikiPageParsingConstants.subIndexFiles.size() == 1){
-				new File(WikiPageParsingConstants.subIndexFiles.get(0)).renameTo(indexFile);
-			return;
-		}*/
 
         List<BufferedReader> readers = getReaderOfSubIndexFiles();
-        boolean reachedEOF[]=new boolean[readers.size()];
+        boolean reachedEOF[] = new boolean[readers.size()];
 
-        PriorityQueue<MergeLine> pq=new PriorityQueue<MergeLine>(WikiPageParsingConstants.subIndexFiles.size());
-        List<BufferedWriter> indexFileWriters = new ArrayList<BufferedWriter>(WikiPageParsingConstants. NUM_OF_INDEXFILES);
-        BufferedWriter allWordsWriter=new BufferedWriter(new FileWriter(new File(WikiPageParsingConstants.indexFileDir, WikiPageParsingConstants.ALL_WORDS_FILE)));
+        PriorityQueue<MergeLine> pq=new PriorityQueue<MergeLine>
+                (WikiPageParsingConstants.subIndexFiles.size());
+        List<BufferedWriter> indexFileWriters = new ArrayList<BufferedWriter>
+                (WikiPageParsingConstants. NUM_OF_INDEXFILES);
+        BufferedWriter allWordsWriter = new BufferedWriter(new FileWriter
+                (new File(WikiPageParsingConstants.indexFileDir, WikiPageParsingConstants.ALL_WORDS_FILE)));
         File auxIndexFile=null;
         for(int i = 0; i< WikiPageParsingConstants. NUM_OF_INDEXFILES; i++){
-            auxIndexFile=new File(WikiPageParsingConstants.indexFileDir,i+ WikiPageParsingConstants.INDEX_SUFFIX);
+            auxIndexFile = new File(WikiPageParsingConstants.indexFileDir,
+                    i + WikiPageParsingConstants.INDEX_SUFFIX);
             WikiPageParsingConstants.indexFiles.add(auxIndexFile.getAbsolutePath());
             indexFileWriters.add(new BufferedWriter(new FileWriter(auxIndexFile,false)));
         }
 
-        for(int i=0; i<readers.size(); i++){
+        for(int i=0; i < readers.size(); i++){
             nextMergeLine(pq, readers, i,reachedEOF);
         }
 
-        List<MergeLine> sameWords=new ArrayList<MergeLine>();;
+        List<MergeLine> sameWords = new ArrayList<MergeLine>();;
         MergeLine mergeLine=null;
         String currentWord=null;
         int numOfDocsWordPresent=0;
@@ -325,17 +315,18 @@ public class PageParser {
             }else{  // append all docIds of currentWord
                 currentWriter=indexFileWriters.get(currentWord.charAt(0) - 'a');
                 //cal IDF
-                numOfDocsWordPresent=0;
+                numOfDocsWordPresent = 0;
                 for(MergeLine sameWord:sameWords){
-                    auxDocIds=sameWord.getDocIds();
+                    auxDocIds = sameWord.getDocIds();
                     for(int i=0;i<auxDocIds.length();i++){
                         if(WikiPageParsingConstants.CHAR_DOC_DELIMITER == auxDocIds.charAt(i))
                             numOfDocsWordPresent++;
                     }
                 }
-                allWordsWriter.write(currentWord+ WikiPageParsingConstants.WORD_IDF_DELIMITER+numOfDocsWordPresent+"\n");
-                idf=invertedDocumentFreq(numOfDocsWordPresent);
-                StringBuffer wholeLine=new StringBuffer();
+                allWordsWriter.write(currentWord + WikiPageParsingConstants.WORD_IDF_DELIMITER +
+                        numOfDocsWordPresent +"\n");
+                idf = invertedDocumentFreq(numOfDocsWordPresent);
+                StringBuffer wholeLine = new StringBuffer();
                 //Add word
                 wholeLine.append(currentWord).append(WikiPageParsingConstants.WORD_IDF_DELIMITER)
                         .append(idf).append(WikiPageParsingConstants.WORD_DELIMITER);
@@ -433,10 +424,10 @@ public class PageParser {
     public void nextMergeLine(PriorityQueue<MergeLine> pq ,List<BufferedReader> readers,
                               int readerNum, boolean[] reachedEOF) throws IOException{
 
-        String line=null, word=null, docIds=null;
+        String line = null, word = null, docIds = null;
         int delimiterIndex=0;
         int numberOfFileReachedEnd=0;
-        int numberOfReaders=readers.size();
+        int numberOfReaders = readers.size();
         while( numberOfFileReachedEnd != numberOfReaders && reachedEOF[readerNum] ){
             readerNum = (readerNum+1) % numberOfReaders;
             numberOfFileReachedEnd++;
@@ -470,7 +461,7 @@ public class PageParser {
     }
     private StringBuilder getFieldsString(Integer[] values){
 
-        StringBuilder valueString=new StringBuilder();
+        StringBuilder valueString = new StringBuilder();
         int weight=0;
         int setBit=0;
         for(Fields field:Fields.values()){

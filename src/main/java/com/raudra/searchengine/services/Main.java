@@ -15,22 +15,16 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.HashSet;
 
-public class WikiParser {
+public class Main {
 
-	/**
-	 * @param args
-	 * @throws SAXException 
-	 * @throws ParserConfigurationException 
-	 * @throws IOException 
-	 */
 	/** Pass Two arguments corpus file and index directory*/
 	public static void main(String[] args)  {
-		// TODO Auto-generated method stub
 		System.out.println(new Date().toString());
 		WikiPageParsingConstants.startTime = TimeUtil.getCurrentTimeInMs();
 		WikiPageParsingConstants.lastDump = TimeUtil.getCurrentTimeInMs();
 		try {
-			buildIndex(args[0],args[1]);
+			buildIndex("/home/satheesh/projects/NewSearchEngine/src/main/input/sample.xml",
+					"/home/satheesh/projects/NewSearchEngine/src/main/output/");
 			
 		}
         catch (Exception e) {
@@ -38,9 +32,10 @@ public class WikiParser {
 			e.printStackTrace();
 		}
 	}
-	private static void buildIndex(String corpusFile,String indexDirectory) throws IOException, ParserConfigurationException, SAXException{
+	private static void buildIndex(String corpusFile,String indexDirectory) throws IOException,
+			ParserConfigurationException, SAXException{
 		  loadStopWords();
-		  SAXParserFactory saxParserFactory=SAXParserFactory.newInstance();
+		  SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		  SAXParser saxParser = saxParserFactory.newSAXParser();
 		  WikiPageParsingConstants.indexFileDir = indexDirectory;
 		  saxParser.parse(corpusFile, new WikiSAXHandler());

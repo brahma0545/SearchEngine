@@ -1,0 +1,48 @@
+<mediawiki xml:lang="en">
+    <page>
+        <title>Page title</title>
+        <!-- page namespace code -->
+        <ns>0</ns>
+        <id>2</id>
+        <!-- If page is a redirection, element "redirect" contains title of the page redirect to -->
+        <redirect title="Redirect page title" />
+        <restrictions>edit=sysop:move=sysop</restrictions>
+        <revision>
+            <timestamp>2001-01-15T13:15:00Z</timestamp>
+            <contributor>
+                <username>Foobar</username>
+                <id>65536</id>
+            </contributor>
+            <comment>I have just one thing to say!</comment>
+            <text>A bunch of [[text]] here.</text>
+            <minor />
+        </revision>
+        <revision>
+            <timestamp>2001-01-15T13:10:27Z</timestamp>
+            <contributor><ip>10.0.0.2</ip></contributor>
+            <comment>new!</comment>
+            <text>An earlier [[revision]].</text>
+        </revision>
+        <revision>
+            <!-- deleted revision example -->
+            <id>4557485</id>
+            <parentid>1243372</parentid>
+            <timestamp>2010-06-24T02:40:22Z</timestamp>
+            <contributor deleted="deleted" />
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+            <text deleted="deleted" />
+            <sha1/>
+        </revision>
+    </page>
+
+    <page>
+        <title>Talk:Page title</title>
+        <revision>
+            <timestamp>2001-01-15T14:03:00Z</timestamp>
+            <contributor><ip>10.0.0.2</ip></contributor>
+            <comment>hey</comment>
+            <text>WHYD YOU LOCK PAGE??!!! i was editing that jerk</text>
+        </revision>
+    </page>
+</mediawiki>

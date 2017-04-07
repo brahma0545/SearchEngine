@@ -14,7 +14,7 @@ public class PostingList {
 	private List<DocDetails> docDetails;
 	
 	public List<DocDetails> makeDocDetails() {
-		docDetails=new ArrayList<>();
+		docDetails=new ArrayList<DocDetails>();
 		int  len=docIds.length(), endIndex,beginIndex=0;
 		while(true) {
 			endIndex = docIds.indexOf(WikiPageParsingConstants.CHAR_DOC_DELIMITER,beginIndex);
@@ -55,7 +55,7 @@ public class PostingList {
 	
 	public static CompareByIDF SORT_BY_IDF=new CompareByIDF();
 	private static class CompareByIDF implements Comparator<PostingList> {
-		@Override
+
 		public int compare(PostingList o1, PostingList o2) {
 			// TODO Auto-generated method stub
 			double diff = o1.getIdf() - o1.getIdf();

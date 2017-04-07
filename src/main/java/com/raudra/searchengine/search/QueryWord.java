@@ -10,6 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class QueryWord {
+
 	private String rawPostingList;
 	private String word;
 	private PageParser.Fields field;
@@ -53,7 +54,6 @@ public class QueryWord {
 	public static CompareByIDF SORT_BY_IDF=new CompareByIDF();
 	private static class CompareByIDF implements Comparator<QueryWord> {
 
-		@Override
 		public int compare(QueryWord o1, QueryWord o2) {
 			// TODO Auto-generated method stub
 			double diff=o1.getIdf() - o2.getIdf();
@@ -66,7 +66,7 @@ public class QueryWord {
 		
 	}
 	public List<DocDetails> makeDocDetails(){
-		docDetails=new ArrayList<>();
+		docDetails=new ArrayList<DocDetails>();
 		DocDetails doc=null;
 		int  len=rawPostingList.length(), endIndex,beginIndex=0;
 		beginIndex=rawPostingList.indexOf(WikiPageParsingConstants.CHAR_WORD_DELIMITER);
@@ -75,7 +75,7 @@ public class QueryWord {
 			endIndex=rawPostingList.indexOf(WikiPageParsingConstants.CHAR_DOC_DELIMITER,beginIndex);
 			if(endIndex < 0)
 				break;
-			doc=new DocDetails(rawPostingList.substring(beginIndex,endIndex));
+			doc = new DocDetails(rawPostingList.substring(beginIndex,endIndex));
         	 
 			if(field != null && (doc.getFieldType()&field.getSetbit()) != field.getSetbit()){
 				beginIndex=endIndex+1;
@@ -83,26 +83,18 @@ public class QueryWord {
 			}
 		//	System.out.println(doc.getDocId());
 			docDetails.add(doc);
-			beginIndex=endIndex+1;
+			beginIndex = endIndex+1;
 		}
 		return docDetails;
 	}
 	
 	public void sortDocDetailsByTf(){
 		Collections.sort(docDetails, SORT_BY_TF);
-		/*int c=0;
-		for(DocDetails doc:docDetails){
-			
-			System.out.println( doc.getDocId() +"  "+doc.getFieldType() +" "+doc.getTf());
-			if(c++ == 10)
-				break;
-		}*/
 	}
 	
 	public static CompareByTf SORT_BY_TF=new CompareByTf();
 	private static class CompareByTf implements Comparator<DocDetails>{
 
-		@Override
 		public int compare(DocDetails o1, DocDetails o2) {
 			// TODO Auto-generated method stub
 			return Double.compare(o1.getTf(), o2.getTf()) * -1;

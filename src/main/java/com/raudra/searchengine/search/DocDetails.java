@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DocDetails {
+
 	private Integer docId;
 	private int fieldType;
 	private double tf;
@@ -28,7 +29,7 @@ public class DocDetails {
 		 
 		 //startIndex = details.indexOf(WikiPageParsingConstants.CHAR_DOC_DELIMITER); // save asgn startIndex=endIndex :)
 		 tf=Double.parseDouble(details.substring(endIndex+1));
-		 resultDocs=new ArrayList<>();
+		 resultDocs=new ArrayList<DocDetails>();
 		 resultDocs.add(this);
 	}
 	
@@ -59,7 +60,7 @@ public class DocDetails {
 		this.resultDocs = resultDocs;
 	}
 	public static List<DocDetails> intersection(List<DocDetails> l1,List<DocDetails> l2,PageParser.Fields field){
-		List<DocDetails> common=new ArrayList<>();
+		List<DocDetails> common=new ArrayList<DocDetails>();
 		
 		if(l2 == null){
 			if(field == null) //no field type

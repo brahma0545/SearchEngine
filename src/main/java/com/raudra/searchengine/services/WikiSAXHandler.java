@@ -53,10 +53,8 @@ class WikiSAXHandler extends DefaultHandler{
 		
 		//Titles File
 		WikiPageParsingConstants.titleFile = new File(WikiPageParsingConstants.indexFileDir,
-				WikiPageParsingConstants.TITLES_FILE_PREFIX + WikiPageParsingConstants.INDEX_SUFFIX);
-		//TODO remove duplicate
-        /*WikiPageParsingConstants.titleFile = new File(WikiPageParsingConstants.indexFileDir,
-				WikiPageParsingConstants.TITLES_FILE_PREFIX + WikiPageParsingConstants.INDEX_SUFFIX);*/
+				WikiPageParsingConstants.TITLES_FILE_PREFIX +
+						WikiPageParsingConstants.INDEX_SUFFIX);
 		try {
 			WikiPageParsingConstants.titleIndexWriter = new BufferedWriter(
                     new FileWriter(WikiPageParsingConstants.titleFile)
@@ -65,7 +63,6 @@ class WikiSAXHandler extends DefaultHandler{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//System.out.println("Start of Doc...");
 	}
 
 	@Override
@@ -79,14 +76,14 @@ class WikiSAXHandler extends DefaultHandler{
             pageParser.mergeSubIndexFiles();
             WikiPageParsingConstants.indexFiles.add(WikiPageParsingConstants.titleFile.getAbsolutePath());
             for(int i = 0; i < WikiPageParsingConstants.NUM_OF_INDEXFILES + 1; i++) {
-				ExternalSort.createOffsetsFile(WikiPageParsingConstants.indexFiles.get(i), WikiPageParsingConstants.indexFileDir,i);
+				ExternalSort.createOffsetsFile(WikiPageParsingConstants.indexFiles.get(i),
+                        WikiPageParsingConstants.indexFileDir,i);
 			}
-			/*ExternalSort.createOffsetsFile(WikiPageParsingConstants.titleFile.getAbsolutePath(),
-					WikiPageParsingConstants.indexFileDir,WikiPageParsingConstants.TITLES_FILE_PREFIX);*/
-			//WikiPageParsingConstants.titleIndexWriter.close();
+			ExternalSort.createOffsetsFile(WikiPageParsingConstants.titleFile.getAbsolutePath(),
+					WikiPageParsingConstants.indexFileDir,WikiPageParsingConstants.TITLES_FILE_PREFIX);
+			WikiPageParsingConstants.titleIndexWriter.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			
 			e.printStackTrace();
 		}
 	}
@@ -121,27 +118,18 @@ class WikiSAXHandler extends DefaultHandler{
 	public void endElement(String uri, String localName, String qName)
 			throws SAXException {
 		// TODO Auto-generated method stub
-		qName=qName.toLowerCase();
-//		System.out.println("end "+qName);
+		qName = qName.toLowerCase();
 		if(parse){
 			if(qName.equals(WikiPageParsingConstants.ELE_ID)){
 				requiredElements.put(WikiPageParsingConstants.ELE_ID, false);
 			}else if(qName.equals(WikiPageParsingConstants.ELE_TEXT)){
 				try {
-					//System.out.println(page.getInfoBox());
-					//System.out.println(page.getCategory());
-					//System.out.println(page.getExternalLinks());
 					pageParser.parse(page);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				/*for(String token:wordCount.keySet()){
-					System.out.println(token +":d"+id+"-"+wordCount.get(token));
-				}*/
 			}
 			parse=false;
-	
 		}
 	}
 
@@ -199,6 +187,7 @@ class WikiSAXHandler extends DefaultHandler{
 						countOfIBCurl--;
 					if(countOfIBCurl == 0){
 						addStringToPrevField(ch, start, i-start+1, curField);
+						addStringToPrevField(ch, start, i-start+1, curField);
 						curField= TextFields.TEXT;
 						divideFields(ch, i , length-(i - start));
 						return;
@@ -208,7 +197,7 @@ class WikiSAXHandler extends DefaultHandler{
 			addStringToPrevField(ch, start, length, curField);
 			return;
 		}
-		for(; i<start+length ; i++ ){
+		for(; i< start+length ; i++ ){
 			matchIndex=i;
 			if(  !infoboxDone && ch[i] == '{'){
 				match=isMatch(ch, start, length,i, TextFields.INFOBOX.pattern);
@@ -217,15 +206,15 @@ class WikiSAXHandler extends DefaultHandler{
 					curField= TextFields.INFOBOX;
 					countOfIBCurl=0;
 				}
-			}else if(curField != TextFields.EXTERNAL_LINKS &&ch[i] == '='){
+			} else if(curField != TextFields.EXTERNAL_LINKS &&ch[i] == '='){
 				match=isExternalLink(ch, start, length, i, TextFields.EXTERNAL_LINKS.pattern);
 				if(match){
 					prevField=curField;
 					curField= TextFields.EXTERNAL_LINKS;
 				}
 				
-			}else if( ch[i] == '['){
-				match=isMatch(ch, start, length,i, TextFields.CATEGORY.pattern);
+			} else if( ch[i] == '['){
+				match = isMatch(ch, start, length,i, TextFields.CATEGORY.pattern);
 				if(match){
 					prevField=curField;
 					curField= TextFields.CATEGORY;
@@ -239,7 +228,7 @@ class WikiSAXHandler extends DefaultHandler{
 		if(match){
 			addStringToPrevField(ch, start, matchIndex-start, prevField);
 			divideFields(ch, matchIndex, length-(matchIndex - start));
-		}else{
+		}else {
 			addStringToPrevField(ch, start, length, curField);
 		}
 	}
