@@ -75,25 +75,20 @@ public class SearchMain {
 		// TODO Auto-generated method stub
 
 		long start = System.currentTimeMillis();
-		final String indexFolder = "/home/satheesh/projects/NewSearchEngine/src/main/output";
+		final String indexFolder = "/home/toothless/Desktop/SearchEngine/src/main/output";
 		loadSecondryIndexes(indexFolder);
 		Main.loadStopWords();
-		//final String queryFile=args[1];
 		String line = null;
 		String tokens[] = null;
-		
-		/*BufferedReader reader=new BufferedReader(new FileReader(new File(queryFile)));
-		int numOfQueries=Integer.parseInt(reader.nextLine());*/
+
 		Scanner reader=new Scanner(System.in);
 		System.out.println("enter num of queries...");
 		int numOfQueries=Integer.parseInt(reader.nextLine());
-	//	String[] queryWords= new String[numOfQueries];
-		
+
 
 		for(int i=0;  i < numOfQueries;i++){
 			List<QueryWord> queryWords=new ArrayList<QueryWord>();
 			QueryWord queryWord;
-		//	line = reader.readLine();
             System.out.println("enter query....");
             line = reader.nextLine();
 			start = System.currentTimeMillis();
@@ -117,9 +112,7 @@ public class SearchMain {
 					queryWords.add(queryWord);
 				}
 			}
-//			System.out.println("getting posting list...");
 			queryWords = getPostingList(queryWords);
-	//		System.out.println("got posting list...");
 			for(QueryWord qWord:queryWords){
 				qWord.makeDocDetails();
 			}
@@ -135,13 +128,10 @@ public class SearchMain {
 			Collections.sort(queryWords, QueryWord.SORT_BY_IDF);
 			
 			List<List<DocDetails>> andDocDetails;
-		//	System.out.println("doing anding...");
 			andDocDetails = findAndOfDocDetails(queryWords);
-		//	System.out.println("done anding ...");
 			int resultIndex=0,resultsCount=0; boolean canDesplay=false;
 			
-//			t:life t:of t:pi c:movie i:irrfan
-	
+
 			for(int index=andDocDetails.size()-1;index>=1;index--){
 				if(shownResults.size() >= WikiPageParsingConstants.MIN_RESULTSET)
 					break;
@@ -413,6 +403,5 @@ public class SearchMain {
 		     result.append(docId +",");	
 		}
 		result.delete(result.length() - 1 , result.length() );
-		//System.out.println(result);
 	}
 }

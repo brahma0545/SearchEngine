@@ -1,0 +1,11 @@
+da#0
+dc#202
+decstat#421
+deni#657
+detail#901
+diamet#1141
+dirt#1419
+distant#1697
+do#1939
+drag#2149
+dual#2364

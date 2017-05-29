@@ -1,4 +1,85 @@
-1#Page title
-2#Page title
-3#Page title
-4#Talk:Page title
+1#10PASS-TS
+2#12th Computer Olympiad
+3#18-bit
+4#2-XL
+5#20-GATE
+6#24-bit
+7#26-bit
+8#3D single object recognition
+9#4-bit
+10#8BF
+11#AA tree
+12#ABLE (programming language)
+13#ABSYS
+14#ACM Computing Classification System
+15#ACORD
+16#ADAPA
+17#AI Shogi 3
+18#AJAX.OOP
+19#AKARI Project
+20#ALynx
+21#AMSRefs
+22#APLX
+23#ARITH-MATIC
+24#ARLOGO
+25#AS2
+26#A Sharp (Axiom)
+27#Abated
+28#Ability Online
+29#Aboutness
+30#Abraham H Oort
+31#Absolute Debugger
+32#Accent (programming language)
+33#Access structure
+34#Acklam Grange Secondary School
+35#Acknowledgment (creative arts)
+36#Active database
+37#Ada Semantic Interface Specification
+38#Adaptive Behavior
+39#Adjustment handles
+40#Admon
+41#Adobe Director
+42#Adobe Persuasion
+43#Advance parole
+44#Advanced Load Address Table
+45#Advanced RISC Computing
+46#Advanced Simulation and Computing Program
+47#Advanced Technology Leisure Application Simulator
+48#Advanced process control
+49#Adversary model
+50#African Studies Quarterly
+51#Ageometresia
+52#Agitator (device)
+53#Ahmad al-Qalqashandi
+54#Aiptek Hyperpen
+55#Air Quality Modeling Group
+56#Air cooling
+57#Airbag lifting system
+58#Aircrack-ng
+59#Albatros (joystick)
+60#Aldiko
+61#Aleksandar Lazarevic
+62#Alex (software)
+63#Alex Martelli
+64#Alien thread
+65#Allan Alcorn
+66#AlphaWorks
+67#Amazon Associates Web Service
+68#American Computer Science League
+69#American National Corpus
+70#American flag sort
+71#AmigaOne
+72#An Urchin in the Storm
+73#Analog Protection System
+74#Analysis on fractals
+75#Analytical stereoplotter
+76#Anatoly Shalyto
+77#Andrew Blake (scientist)
+78#Andrzej Trybulec
+79#Andy Blumenthal
+80#Andy the Messenger Robot (Many Other Functions)
+81#Angela Orebaugh
+82#Anisotropic filtering
+83#Annotated reference manual
+84#Anomaly-based intrusion detection system
+85#Anti-moose mat

@@ -21,7 +21,7 @@
             <timestamp>2001-01-15T13:10:27Z</timestamp>
             <contributor><ip>10.0.0.2</ip></contributor>
             <comment>new!</comment>
-            <text>An earlier [[revision]].</text>
+            <text>An earlier [[revision]]., editing</text>
         </revision>
         <revision>
             <!-- deleted revision example -->
@@ -42,7 +42,7 @@
             <timestamp>2001-01-15T14:03:00Z</timestamp>
             <contributor><ip>10.0.0.2</ip></contributor>
             <comment>hey</comment>
-            <text>WHYD YOU LOCK PAGE??!!! i was editing that jerk</text>
+            <text>editing, WHYD YOU LOCK PAGE??!!! i was editing that jerk</text>
         </revision>
     </page>
 </mediawiki>

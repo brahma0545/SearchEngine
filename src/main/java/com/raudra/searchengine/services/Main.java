@@ -23,8 +23,8 @@ public class Main {
 		WikiPageParsingConstants.startTime = TimeUtil.getCurrentTimeInMs();
 		WikiPageParsingConstants.lastDump = TimeUtil.getCurrentTimeInMs();
 		try {
-			buildIndex("/home/satheesh/projects/NewSearchEngine/src/main/input/sample.xml",
-					"/home/satheesh/projects/NewSearchEngine/src/main/output/");
+			buildIndex("/home/toothless/Desktop/SearchEngine/src/main/input/2000pages.dat",
+					"/home/toothless/Desktop/SearchEngine/src/main/output/");
 			
 		}
         catch (Exception e) {
@@ -32,8 +32,7 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
-	private static void buildIndex(String corpusFile,String indexDirectory) throws IOException,
-			ParserConfigurationException, SAXException{
+	private static void buildIndex(String corpusFile,String indexDirectory) throws IOException, ParserConfigurationException, SAXException{
 		  loadStopWords();
 		  SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
 		  SAXParser saxParser = saxParserFactory.newSAXParser();
